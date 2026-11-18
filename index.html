@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>נושמות לידה | ריטריט עוטף להריוניות במלון יולדות צפון</title>
+  
+  <!-- גוגל פונטס - Assistant -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-burgundy: #731248; /* בורדו ראשי */
+      --brand-plum: #8c4c67;     /* שזיף מעושן */
+      --brand-rose: #c26376;     /* ורוד עתיק */
+      --brand-blush: #faecea;    /* רקע ורדרד רך */
+      --brand-cream: #fbf9f6;    /* רקע שמנת */
+      --brand-white: #ffffff;
+      --text-dark: #2c2527;
+      --text-muted: #5e5256;
+      --bit-turquoise: #00b2a9;  /* צבע ביט רשמי */
+      --shadow-sm: 0 4px 15px rgba(115, 18, 72, 0.05);
+      --shadow-md: 0 10px 30px rgba(115, 18, 72, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background-color: var(--brand-cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header & Logo */
+    header {
+      background: var(--brand-white);
+      padding: 16px 0;
+      text-align: center;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-logo {
+      max-height: 65px;
+      width: auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, var(--brand-blush) 0%, var(--brand-cream) 100%);
+      padding: 50px 0 65px 0;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(115, 18, 72, 0.09);
+      color: var(--brand-burgundy);
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--brand-burgundy);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--brand-plum);
+      margin-bottom: 12px;
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 30px auto;
+    }
+
+    .hero-img-box {
+      max-width: 780px;
+      margin: 0 auto 30px auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-img-box img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--brand-burgundy);
+      color: var(--brand-white);
+      text-decoration: none;
+      padding: 16px 40px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(115, 18, 72, 0.25);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-cta:hover {
+      background-color: #580c36;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(115, 18, 72, 0.35);
+    }
+
+    /* Section Headings */
+    .section {
+      padding: 55px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--brand-burgundy);
+      margin-bottom: 35px;
+    }
+
+    /* פרטים לוגיסטיים Grid */
+    .logistics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .logistic-card {
+      background: var(--brand-white);
+      border-radius: var(--radius-md);
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(194, 99, 118, 0.15);
+    }
+
+    .logistic-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .logistic-label {
+      font-size: 0.95rem;
+      color: var(--brand-rose);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .logistic-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .logistic-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* לוח זמנים / מה מחכה לך */
+    .schedule-container {
+      background: var(--brand-white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .schedule-item {
+      display: flex;
+      gap: 24px;
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #f0e4e8;
+    }
+
+    .schedule-item:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .schedule-time {
+      background: var(--brand-blush);
+      color: var(--brand-burgundy);
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: 12px;
+      height: fit-content;
+      white-space: nowrap;
+      font-size: 1.05rem;
+    }
+
+    .schedule-content h3 {
+      font-size: 1.25rem;
+      color: var(--brand-burgundy);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .schedule-content p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* המנחות - 3 כרטיסיות מפורטות */
+    .hosts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .host-card {
+      background: var(--brand-white);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(194, 99, 118, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .host-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px auto;
+      border: 4px solid var(--brand-blush);
+      box-shadow: 0 6px 18px rgba(115, 18, 72, 0.12);
+    }
+
+    .host-name {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--brand-burgundy);
+      margin-bottom: 6px;
+    }
+
+    .host-role {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brand-rose);
+      margin-bottom: 14px;
+    }
+
+    .host-bio {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .host-tech {
+      background: var(--brand-cream);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      border-top: 2px solid var(--brand-blush);
+    }
+
+    /* אזור הרשמה ותשלום */
+    .register-wrapper {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .form-box {
+      background: var(--brand-white);
+      border: 2px solid var(--brand-rose);
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-box h2 {
+      font-size: 1.7rem;
+      color: var(--brand-burgundy);
+      margin-bottom: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      color: var(--brand-burgundy);
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1.5px solid #dfcad1;
+      font-family: inherit;
+      font-size: 1.05rem;
+      background: #faf8f8;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--brand-burgundy);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(115, 18, 72, 0.1);
+    }
+
+    /* תיבת תשלום בביט */
+    .payment-box {
+      background: linear-gradient(145deg, #ffffff 0%, #faecea 100%);
+      border-radius: var(--radius-lg);
+      padding: 35px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(115, 18, 72, 0.15);
+      text-align: center;
+    }
+
+    .bit-badge {
+      display: inline-block;
+      background: var(--bit-turquoise);
+      color: white;
+      font-weight: 800;
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .price-tag {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--brand-burgundy);
+      margin: 10px 0;
+    }
+
+    .bit-phone-display {
+      background: var(--brand-white);
+      border: 2px dashed var(--bit-turquoise);
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin: 18px 0;
+      direction: ltr;
+    }
+
+    .btn-bit {
+      display: inline-block;
+      width: 100%;
+      background-color: var(--bit-turquoise);
+      color: white;
+      font-weight: 700;
+      padding: 14px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.25s;
+      margin-bottom: 10px;
+    }
+
+    .btn-bit:hover {
+      background-color: #00968e;
+    }
+
+    .copy-feedback {
+      font-size: 0.9rem;
+      color: #008078;
+      font-weight: 700;
+      min-height: 22px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--brand-white);
+      text-align: center;
+      padding: 45px 20px;
+      border-top: 1px solid #f0e4e8;
+      margin-top: 40px;
+    }
+
+    footer img {
+      max-height: 70px;
+      margin-bottom: 14px;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    footer a {
+      color: var(--brand-burgundy);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* Floating WhatsApp */
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.25s;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-img-box img { height: 230px; }
+      .schedule-item { flex-direction: column; gap: 10px; }
+      .register-wrapper { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header עם הלוגו -->
+  <header>
+    <div class="container">
+      <img src="logo.jpg" alt="דורית ארנסט" class="header-logo">
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">ריטריט נשים בהריון 🌸</div>
+      <h1>נושמות לידה</h1>
+      <p class="hero-subtitle">מפגש אינטימי להריוניות, הגוף והיום שאחרי.</p>
+      <p class="hero-desc">ריטריט עוטף, מעצים ומפנק במלון יולדות של הצפון.</p>
+
+      <div class="hero-img-box">
+        <img src="pregnancy.jpg" alt="נושמות לידה - ריטריט להריוניות">
+      </div>
+
+      <a href="#register" class="btn-cta">אני רוצה לשריין מקום בריטריט 🤍</a>
+    </div>
+  </section>
+
+  <!-- פרטים לוגיסטיים -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">📅 פרטים לוגיסטיים</h2>
+      
+      <div class="logistics-grid">
+        <div class="logistic-card">
+          <span class="logistic-icon">🗓️</span>
+          <div class="logistic-label">תאריך</div>
+          <div class="logistic-value">22/12/2026</div>
+        </div>
+
+        <div class="logistic-card">
+          <span class="logistic-icon">⏰</span>
+          <div class="logistic-label">שעות</div>
+          <div class="logistic-value">16:00 – 19:30</div>
+          <div class="logistic-sub">3.5 שעות של ידע ופינוק</div>
+        </div>
+
+        <div class="logistic-card">
+          <span class="logistic-icon">📍</span>
+          <div class="logistic-label">מיקום</div>
+          <div class="logistic-value">מלון יולדות צפון (חיפה)</div>
+          <div class="logistic-sub">הסדרי חניה במחיר 20 ש"ח</div>
+        </div>
+
+        <div class="logistic-card">
+          <span class="logistic-icon">✨</span>
+          <div class="logistic-label">עלות השתתפות</div>
+          <div class="logistic-value">280 ש"ח בלבד</div>
+          <div class="logistic-sub">כולל ערכת מוצרים אישית</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- תוכניית הריטריט -->
+  <section class="section" style="padding-top: 10px;">
+    <div class="container">
+      <h2 class="section-title">מה מחכה לך בריטריט?</h2>
+      <p style="text-align: center; color: var(--brand-plum); font-weight: 600; margin-top: -25px; margin-bottom: 35px;">
+        3.5 שעות של ידע, פינוק וחיבור לעצמך
+      </p>
+
+      <div class="schedule-container">
+        <div class="schedule-item">
+          <div class="schedule-time">16:00 – 16:30</div>
+          <div class="schedule-content">
+            <h3>נחיתה רכה</h3>
+            <p>התכנסות, תה, קפה, כיבוד קל, פתיחה והיכרות אינטימית בסביבה עוטפת.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">16:30 – 17:30</div>
+          <div class="schedule-content">
+            <h3>שיחה בגובה העיניים עם לילי יחזקאל</h3>
+            <p>הכנה מעשית ללידה מבוססת ניסיון מחדר הלידה: מתי לפנות למיון, סימנים מבשרי לידה, התמודדות עם כאב בחדר לידה ומתן כלים טבעיים.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">17:30 – 18:15</div>
+          <div class="schedule-content">
+            <h3>הלידה והיום שאחרי (פוסט-פארטום) עם דורית ארנסט</h3>
+            <p>שיחה ומתן כלים מעשיים ללידה ולהתאוששות הגוף, תזונה מחלימה לתמיכה בך והתאקלמות פיזית ונפשית בבית עם התינוק.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">18:15 – 19:15</div>
+          <div class="schedule-content">
+            <h3>סדנת רוקחות טבעית בהנחיית ליאל ארמוזה שקולניק</h3>
+            <p>כל משתתפת תלמד על כוחם של הצמחים ותרקח לעצמה שני מוצרים אישיים לקחת הביתה: <strong>שמן עיסוי אישי ללידה</strong> ו<strong>משחה לפטמות רגישות וסדוקות</strong>.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">19:15 – 19:30</div>
+          <div class="schedule-content">
+            <h3>היכרות עם המלונית וסיכום</h3>
+            <p>סיור קצר, מענה לשאלות וקבלת <strong>שובר הנחה בלעדי של 5%</strong> לשהייה במלון יולדות צפון.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- המנחות -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">המנחות שמלוות אותך</h2>
+
+      <div class="hosts-grid">
+        <!-- מנחה 1: דורית ארנסט -->
+        <div class="host-card">
+          <div>
+            <img src="dorit.jpg" alt="דורית ארנסט" class="host-avatar">
+            <h3 class="host-name">דורית ארנסט</h3>
+            <div class="host-role">דולה פוסט-פארטום ברוח האיורוודה</div>
+            <p class="host-bio">
+              מלווה נשים לפני ואחרי הריון ולידה, מנחת מעגלי נשים ומביאה ידע מעמיק בתמיכה בגוף ובנפש בימים שאחרי הלידה.
+            </p>
+          </div>
+          <div class="host-tech">
+            <strong>התמחות וכלים:</strong> עיבוד חוויית ההיריון והלידה בגישת B.O.T, בשילוב עיסוי בטן, סגירת אגן ורחם ותזונה מחלימה.
+          </div>
+        </div>
+
+        <!-- מנחה 2: לילי יחזקאל -->
+        <div class="host-card">
+          <div>
+            <img src="lili.jpg" alt="לילי יחזקאל" class="host-avatar">
+            <h3 class="host-name">לילי יחזקאל</h3>
+            <div class="host-role">מיילדת מוסמכת ומדריכת הכנה ללידה והנקה</div>
+            <p class="host-bio">
+              מיילדת מנוסה מחדר הלידה, מלווה זוגות ונשים לקראת לידה בגישה מעשית, רגועה ומעצימה בגובה העיניים.
+            </p>
+          </div>
+          <div class="host-tech">
+            <strong>התמחות וכלים:</strong> מיילדות, הדרכת הכנה ללידה, ייעוץ והדרכת הנקה וצילום לידה תיעודי.
+          </div>
+        </div>
+
+        <!-- מנחה 3: ליאל ארמוזה שקולניק -->
+        <div class="host-card">
+          <div>
+            <img src="lial.jpg" alt="ליאל ארמוזה שקולניק" class="host-avatar">
+            <h3 class="host-name">ליאל ארמוזה שקולניק</h3>
+            <div class="host-role">ארומתרפיסטית מוסמכת ומייסדת LAS Naturals</div>
+            <p class="host-bio">
+              מתמחה ברוקחות טבעית מותאמת אישית לנשים בהריון, לידה ותקופת ההנקה תוך שימוש בחומרי גלם טבעיים וטהורים.
+            </p>
+          </div>
+          <div class="host-tech">
+            <strong>התמחות וכלים:</strong> ארומתרפיה קלינית, פורמולציות צמחיות ושמנים אתריים בטוחים להריון וללידה.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- הרשמה ותשלום בביט -->
+  <section class="section" id="register">
+    <div class="container">
+      <div class="register-wrapper">
+        
+        <!-- טופס הרשמה -->
+        <div class="form-box">
+          <h2>הרשמה ושמירת מקום</h2>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">
+            מספר המקומות מוגבל לשמירה על אווירה אינטימית. מלאי את פרטייך:
+          </p>
+
+          <!-- חבר ל-Formspree או ל-Webhook של Google Sheets -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            
+            <div class="form-group">
+              <label for="fullname">שם פרטי ומשפחה:</label>
+              <input type="text" id="fullname" name="full_name" class="form-control" placeholder="ישראל ישראלי" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">מספר טלפון:</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="050-0000000" dir="ltr" style="text-align: right;" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">כתובת אימייל:</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" dir="ltr" style="text-align: right;" required>
+            </div>
+
+            <div class="form-group">
+              <label for="week">שבוע הריון (נכון לתאריך הריטריט / היום):</label>
+              <input type="text" id="week" name="pregnancy_week" class="form-control" placeholder="לדוגמה: שבוע 28" required>
+            </div>
+
+            <button type="submit" class="btn-cta" style="width: 100%; margin-top: 8px;">
+              🌸 שליחת פרטים והמשך לתשלום
+            </button>
+          </form>
+        </div>
+
+        <!-- אזור תשלום בביט -->
+        <div class="payment-box">
+          <span class="bit-badge">תשלום מהיר ב-bit</span>
+          <h3 style="color: var(--brand-burgundy); font-size: 1.4rem;">הסדרת תשלום לריטריט</h3>
+          <div class="price-tag">280 ₪</div>
+          <p style="color: var(--text-muted); font-size: 0.98rem;">
+            להשלמת ההרשמה ושריון המקום סופית, ניתן להעביר תשלום באפליקציית <strong>bit</strong> למספר:
+          </p>
+
+          <div class="bit-phone-display" id="bitNumber">052-6779649</div>
+
+          <button type="button" class="btn-bit" onclick="copyBitNumber()">
+            📋 העתקת מספר לתשלום ב-bit
+          </button>
+          <div class="copy-feedback" id="copyFeedback"></div>
+
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 12px;">
+            * בהעברה בביט אנא צייני את שמך המלא בהערה.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <img src="logo.jpg" alt="דורית ארנסט">
+      <p><strong>דורית ארנסט</strong> · דולה פוסט-פארטום · מלווה נשים לפני ואחרי הריון ולידה · מנחת מעגלים</p>
+      <p><a href="mailto:doriternest@gmail.com">doriternest@gmail.com</a></p>
+      <p><a href="tel:0526779649">052-6779649</a></p>
+    </div>
+  </footer>
+
+  <!-- כפתור וואטסאפ צף -->
+  <a href="https://wa.me/972526779649?text=היי%20דורית,%20אשמח%20לפרטים%20נוספים%20על%20ריטריט%20נושמות%20לידה" 
+     class="floating-wa" 
+     target="_blank" 
+     title="דברי איתי בוואטסאפ">
+    💬
+  </a>
+
+  <script>
+    function copyBitNumber() {
+      const num = "0526779649";
+      navigator.clipboard.writeText(num).then(() => {
+        const feedback = document.getElementById("copyFeedback");
+        feedback.textContent = "המספר 052-6779649 הועתק! כעת ניתן להדביק באפליקציית bit ✓";
+        setTimeout(() => { feedback.textContent = ""; }, 5000);
+      });
+    }
+  </script>
+
+</body>
+</html>
